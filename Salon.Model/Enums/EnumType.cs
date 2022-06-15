@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Salon.Model
 {
-    public enum EnumTipo
+    public enum EnumType
     {
         User = 1,
         Administrator = 2,

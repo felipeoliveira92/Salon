@@ -13,5 +13,7 @@ namespace Salon.Data
 
         DbSet<Services> Services { get; set; }
         DbSet<User> Users { get; set; }
+
+        
     }
 }
