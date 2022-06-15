@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Salon.Data", "Salon.Data\Sa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Salon.Model", "Salon.Model\Salon.Model.csproj", "{8DE86991-121A-4850-9DE9-B23F6804199C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Salon.Infra", "Salon.Infra\Salon.Infra.csproj", "{23F0EA2E-F2AB-47CE-B8B0-FA2EDE9A4047}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{8DE86991-121A-4850-9DE9-B23F6804199C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DE86991-121A-4850-9DE9-B23F6804199C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8DE86991-121A-4850-9DE9-B23F6804199C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23F0EA2E-F2AB-47CE-B8B0-FA2EDE9A4047}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23F0EA2E-F2AB-47CE-B8B0-FA2EDE9A4047}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23F0EA2E-F2AB-47CE-B8B0-FA2EDE9A4047}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23F0EA2E-F2AB-47CE-B8B0-FA2EDE9A4047}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
