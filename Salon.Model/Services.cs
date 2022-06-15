@@ -2,9 +2,10 @@
 {
     public class Services
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public decimal Price { get; set; }
+        [key]
+        public int IdService { get; set; }
+        public string NameService { get; set; }
+        public string DescriptionService { get; set; }
+        public decimal PriceService { get; set; }
     }
 }
