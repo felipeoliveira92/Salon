@@ -1,10 +1,11 @@
 ﻿namespace Salon.Model
 {
     public class User
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Senha { get; set; }
-        public string Tipo { get; set; }
+    {    
+        [key]
+        public int IdUser { get; set; }
+        public string NameUser { get; set; }
+        public string PasswordUser { get; set; }
+        public string Type { get; set; }
     }
 }
