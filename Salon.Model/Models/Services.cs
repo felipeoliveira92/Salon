@@ -1,8 +1,10 @@
-﻿namespace Salon.Model
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Salon.Model.Models
 {
     public class Services
     {
-        [key]
+        [Key]
         public int IdService { get; set; }
         public string NameService { get; set; }
         public string DescriptionService { get; set; }

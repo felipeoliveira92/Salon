@@ -1,8 +1,10 @@
-﻿namespace Salon.Model
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Salon.Model.Models
 {
     public class User
     {    
-        [key]
+        [Key]
         public int IdUser { get; set; }
         public string NameUser { get; set; }
         public string LoginUser { get; set; }

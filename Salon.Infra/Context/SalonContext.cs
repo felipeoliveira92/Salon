@@ -1,7 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using Salon.Model.Models;
+
 namespace Salon.Infra.Context
 {
     public class SalonContext : DbContext
     {
+        public SalonContext()
+        {
+
+        }
         public SalonContext(DbContextOptions<SalonContext> options) : base(options)
         {
             

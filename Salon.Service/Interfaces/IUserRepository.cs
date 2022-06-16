@@ -1,3 +1,6 @@
+using Salon.Model.Models;
+using System.Collections.Generic;
+
 namespace Salon.Service.Interfaces
 {
     public interface IUserRepository

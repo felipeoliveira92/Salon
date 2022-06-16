@@ -1,8 +1,11 @@
+using System;
+using System.ComponentModel.DataAnnotations;
+
 namespace Salon.Model.Models
 {
     public class Schedule
     {
-        [key]
+        [Key]
         public int IdAppointment { get; set; }
         public DateTime DateInitial { get; set; }
         public DateTime DateEnd { get; set; }
