@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.31919.166
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32602.291
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Salon.Model", "Salon.Model\Salon.Model.csproj", "{8DE86991-121A-4850-9DE9-B23F6804199C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Salon.Model", "Salon.Model\Salon.Model.csproj", "{8DE86991-121A-4850-9DE9-B23F6804199C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Salon.Infra", "Salon.Infra\Salon.Infra.csproj", "{23F0EA2E-F2AB-47CE-B8B0-FA2EDE9A4047}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Salon.Infra", "Salon.Infra\Salon.Infra.csproj", "{23F0EA2E-F2AB-47CE-B8B0-FA2EDE9A4047}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Salon.Service", "Salon.Service\Salon.Service.csproj", "{0D6CF9AF-32D5-4B06-AD85-CBF0FAC66132}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Salon.Service", "Salon.Service\Salon.Service.csproj", "{0D6CF9AF-32D5-4B06-AD85-CBF0FAC66132}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Salon.Api", "Salon.Api\Salon.Api.csproj", "{BC24D2D6-40C5-42A5-B9DA-2762E970E554}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E46BA425-E9DF-4672-99BB-9025FB904989}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E46BA425-E9DF-4672-99BB-9025FB904989}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E46BA425-E9DF-4672-99BB-9025FB904989}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E46BA425-E9DF-4672-99BB-9025FB904989}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8DE86991-121A-4850-9DE9-B23F6804199C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8DE86991-121A-4850-9DE9-B23F6804199C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DE86991-121A-4850-9DE9-B23F6804199C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -31,6 +29,10 @@ Global
 		{0D6CF9AF-32D5-4B06-AD85-CBF0FAC66132}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D6CF9AF-32D5-4B06-AD85-CBF0FAC66132}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D6CF9AF-32D5-4B06-AD85-CBF0FAC66132}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC24D2D6-40C5-42A5-B9DA-2762E970E554}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC24D2D6-40C5-42A5-B9DA-2762E970E554}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC24D2D6-40C5-42A5-B9DA-2762E970E554}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC24D2D6-40C5-42A5-B9DA-2762E970E554}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
