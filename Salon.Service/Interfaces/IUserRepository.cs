@@ -12,5 +12,6 @@ namespace Salon.Service.Interfaces
         User GetUserById(int id);
         User GetUserByName(string name);
         User GetUserByLogin(string login);
+        bool Login(string login, string password);
     }
 }

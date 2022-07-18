@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Salon.Api.ViewModels;
 using Salon.Service.Interfaces;
 
 namespace Salon.Api.Controllers
@@ -14,11 +15,11 @@ namespace Salon.Api.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetUser(string login)
+        public IActionResult Login(LoginViewModel model)
         {
-            if(!string.IsNullOrEmpty(login))
+            if(!string.IsNullOrEmpty(model.LoginUser))
             {
-                if(_userRepository.GetUserByLogin(login) != null)
+                if(_userRepository.Login(model.LoginUser, model.PasswordUser))
                 {
                     return Ok();
                 }

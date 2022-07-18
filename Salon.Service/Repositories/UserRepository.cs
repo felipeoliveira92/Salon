@@ -79,6 +79,23 @@ namespace Salon.Service.Repositories
             return users;
         }
 
+        public bool Login(string login, string password)
+        {
+            var user = GetUserByLogin(login);
+
+            if(user != null)
+            {
+                if(user.PasswordUser == password)
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            return false;
+        }
+
         public void SaveUser(User user)
         {
             if(user != null)
