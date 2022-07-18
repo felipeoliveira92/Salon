@@ -15,8 +15,8 @@ namespace Salon.Infra.Context
         }
 
         public DbSet<User> Users { get; set; }
-
         public DbSet<Services> Services { get; set; }
+        public DbSet<Task> Tasks { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

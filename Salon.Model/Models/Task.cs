@@ -3,10 +3,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Salon.Model.Models
 {
-    public class Schedule
+    public class Task
     {
         [Key]
-        public int IdAppointment { get; set; }
+        public int Id { get; set; }
         public DateTime DateInitial { get; set; }
         public DateTime DateEnd { get; set; }
         public int IdService { get; set; }
