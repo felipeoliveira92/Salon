@@ -1,5 +1,6 @@
 using Salon.Infra.Context;
 using Salon.Model.Models;
+using Salon.Service.DTOs;
 using Salon.Service.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
@@ -94,6 +95,24 @@ namespace Salon.Service.Repositories
             }
 
             return false;
+        }
+
+        public bool Register(RegisterDTO model)
+        {
+            var user = new User(model.NameUser, model.LoginUser, model.PasswordUser);
+
+            _context.Users.Add(user);
+            _context.SaveChanges();
+
+            return true;
+            try
+            {
+                
+            }
+            catch (System.Exception)
+            {
+                return false;
+            }                       
         }
 
         public void SaveUser(User user)

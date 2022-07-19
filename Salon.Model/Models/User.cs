@@ -9,6 +9,14 @@ namespace Salon.Model.Models
         public string NameUser { get; set; }
         public string LoginUser { get; set; }
         public string PasswordUser { get; set; }
-        public int Type { get; set; }
+        public EnumTypeUser Type { get; set; }
+
+        public User(string name, string login, string password)
+        {
+            NameUser = name;
+            LoginUser = login;
+            PasswordUser = password;
+        }
+
     }
 }
