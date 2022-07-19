@@ -13,19 +13,9 @@ namespace Salon.Api.Controllers
         public UserController(IUserRepository userRepository)
         {
             _userRepository = userRepository;
-        }
+        }        
 
-        [HttpGet]
-        public IActionResult Login(LoginViewModel model)
-        {
-            if(!string.IsNullOrEmpty(model.LoginUser))
-                if(_userRepository.Login(model.LoginUser, model.PasswordUser))
-                    return Ok();
-
-            return NotFound();
-        }
-
-        [HttpPost]
+        [HttpPost("/Register")]
         public IActionResult Register(RegisterDTO model)
         {
             if (ModelState.IsValid)
@@ -33,6 +23,16 @@ namespace Salon.Api.Controllers
                     return Ok();
 
             return BadRequest();
+        }
+
+        [HttpPost("/login")]
+        public IActionResult Login(LoginViewModel model)
+        {
+            if (ModelState.IsValid)
+                if (_userRepository.Login(model.LoginUser, model.PasswordUser))
+                    return Ok("Login efetuado com sucesso!");
+
+            return BadRequest("Usuario ou senha incorretos!");
         }
     }
 }

@@ -98,16 +98,15 @@ namespace Salon.Service.Repositories
         }
 
         public bool Register(RegisterDTO model)
-        {
-            var user = new User(model.NameUser, model.LoginUser, model.PasswordUser);
-
-            _context.Users.Add(user);
-            _context.SaveChanges();
-
-            return true;
+        {            
             try
             {
-                
+                var user = new User(model.NameUser, model.LoginUser, model.PasswordUser, model.Type);
+
+                _context.Users.Add(user);
+                _context.SaveChanges();
+
+                return true;
             }
             catch (System.Exception)
             {
