@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Salon.Service.Interfaces
 {
-    public interface ITaskRepository
+    public interface IWorkTaskRepository
     {
         void Insert(InsertWorkTaskDTO model);
         void Update(WorkTask model);
