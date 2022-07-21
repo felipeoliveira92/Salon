@@ -8,7 +8,5 @@ namespace Salon.Service.DTOs
         public string LoginUser { get; set; }
         public string PasswordUser { get; set; }
         public EnumTypeUser Type { get; set; }
-
-
     }
 }

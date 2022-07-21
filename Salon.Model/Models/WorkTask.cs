@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Salon.Model.Models
 {
-    public class Task
+    public class WorkTask
     {
         [Key]
         public int Id { get; set; }
