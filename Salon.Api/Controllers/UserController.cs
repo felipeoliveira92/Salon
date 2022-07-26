@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Salon.Api.ViewModels;
+using Salon.Model.Models;
 using Salon.Service.DTOs;
 using Salon.Service.Interfaces;
+using System.Collections.Generic;
 
 namespace Salon.Api.Controllers
 {
@@ -33,6 +35,12 @@ namespace Salon.Api.Controllers
                     return Ok("Login efetuado com sucesso!");
 
             return BadRequest("Usuario ou senha incorretos!");
+        }
+        
+        [HttpGet]
+        public List<User> GetUsers()
+        {
+            return _userRepository.GetUsers();
         }
     }
 }
