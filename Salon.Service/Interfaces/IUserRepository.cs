@@ -8,7 +8,7 @@ namespace Salon.Service.Interfaces
     {
         void SaveUser(User user);
         void DeleteUser(int id);
-        User UpdateUser(int id, User user);
+        User UpdateUser(User user);
         List<User> GetUsers();
         User GetUserById(int id);
         User GetUserByName(string name);

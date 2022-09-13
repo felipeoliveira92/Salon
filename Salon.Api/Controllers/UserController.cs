@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Salon.Api.ViewModels;
 using Salon.Model.Models;
 using Salon.Service.DTOs;
 using Salon.Service.Interfaces;
@@ -15,7 +14,77 @@ namespace Salon.Api.Controllers
         public UserController(IUserRepository userRepository)
         {
             _userRepository = userRepository;
-        }        
+        }
+        
+        [HttpGet]
+        public List<User> GetAll()
+        {
+            return _userRepository.GetUsers();
+        }
+
+        [HttpGet]
+        public User GetUserById(int id)
+        {
+            return _userRepository.GetUserById(id);
+        }
+
+        [HttpGet]
+        public User GetUserByLogin(string username)
+        {
+            return _userRepository.GetUserByLogin(username);
+        }
+
+        [HttpPost]
+        public IActionResult PostUser(User model)
+        {
+            try
+            {
+                _userRepository.SaveUser(model);
+                return Ok();
+            }
+            catch (System.Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
+
+        [HttpPut]
+        public IActionResult UpdateUser(User model)
+        {
+            try
+            {
+                _userRepository.UpdateUser(model);
+                return Ok();
+            }
+            catch (System.Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
+
+        [HttpDelete]
+        public IActionResult DeleteUser(int id)
+        {
+            try
+            {
+                _userRepository.DeleteUser(id);
+                return Ok();
+            }
+            catch (System.Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
+
+        [HttpPost("/login")]
+        public IActionResult Login(string username, string password)
+        {
+            if (ModelState.IsValid)
+                if (_userRepository.Login(username, password))
+                    return Ok("Login efetuado com sucesso!");
+
+            return BadRequest("Usuario ou senha incorretos!");
+        }
 
         [HttpPost("/Register")]
         public IActionResult Register(RegisterDTO model)
@@ -25,22 +94,6 @@ namespace Salon.Api.Controllers
                     return Ok();
 
             return BadRequest();
-        }
-
-        [HttpPost("/login")]
-        public IActionResult Login(LoginViewModel model)
-        {
-            if (ModelState.IsValid)
-                if (_userRepository.Login(model.LoginUser, model.PasswordUser))
-                    return Ok("Login efetuado com sucesso!");
-
-            return BadRequest("Usuario ou senha incorretos!");
-        }
-        
-        [HttpGet]
-        public List<User> GetUsers()
-        {
-            return _userRepository.GetUsers();
         }
     }
 }

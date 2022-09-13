@@ -124,9 +124,9 @@ namespace Salon.Service.Repositories
             }
         }
 
-        public User UpdateUser(int id, User user)
+        public User UpdateUser(User user)
         {
-            if(id == user.IdUser)
+            if(user.IdUser > 0)
             {
                 _context.Users.Update(user);
                 _context.SaveChanges();
