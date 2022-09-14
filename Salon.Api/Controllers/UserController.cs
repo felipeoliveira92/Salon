@@ -15,20 +15,20 @@ namespace Salon.Api.Controllers
         {
             _userRepository = userRepository;
         }
-        
+
         [HttpGet]
         public List<User> GetAll()
         {
             return _userRepository.GetUsers();
         }
 
-        [HttpGet]
+        [HttpGet("id")]
         public User GetUserById(int id)
         {
             return _userRepository.GetUserById(id);
         }
 
-        [HttpGet]
+        [HttpGet("username")]
         public User GetUserByLogin(string username)
         {
             return _userRepository.GetUserByLogin(username);
