@@ -1,6 +1,5 @@
 using Salon.Infra.Context;
 using Salon.Model.Models;
-using Salon.Service.DTOs;
 using Salon.Service.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +19,7 @@ namespace Salon.Service.Repositories
         {
             if (id != 0)
             {
-                var user = _context.Users.FirstOrDefault(u => u.IdUser == id);
+                var user = _context.Users.FirstOrDefault(u => u.Id == id);
 
                 if (user != null)
                 {
@@ -34,7 +33,7 @@ namespace Salon.Service.Repositories
         {
             if (id != 0)
             {
-                var user = _context.Users.FirstOrDefault(u => u.IdUser == id);
+                var user = _context.Users.FirstOrDefault(u => u.Id == id);
 
                 if (user != null)
                 {
@@ -49,7 +48,7 @@ namespace Salon.Service.Repositories
         {
             if (!string.IsNullOrEmpty(login))
             {
-                var user = _context.Users.FirstOrDefault(u => u.LoginUser == login);
+                var user = _context.Users.FirstOrDefault(u => u.Username == login);
 
                 if (user != null)
                 {
@@ -64,7 +63,7 @@ namespace Salon.Service.Repositories
         {
             if(!string.IsNullOrEmpty(name))
             {
-                var user = _context.Users.FirstOrDefault(u => u.NameUser == name);
+                var user = _context.Users.FirstOrDefault(u => u.Name == name);
 
                 if (user != null)
                 {
@@ -87,7 +86,7 @@ namespace Salon.Service.Repositories
 
             if(user != null)
             {
-                if(user.PasswordUser == password)
+                if(user.Password == password)
                 {
                     return true;
                 }
@@ -98,13 +97,11 @@ namespace Salon.Service.Repositories
             return false;
         }
 
-        public bool Register(RegisterDTO model)
+        public bool Register(User model)
         {            
             try
             {
-                var user = new User(model.NameUser, model.LoginUser, model.PasswordUser, model.Type);
-
-                _context.Users.Add(user);
+                _context.Users.Add(model);
                 _context.SaveChanges();
 
                 return true;
@@ -126,7 +123,7 @@ namespace Salon.Service.Repositories
 
         public User UpdateUser(User user)
         {
-            if(user.IdUser > 0)
+            if(user.Id > 0)
             {
                 _context.Users.Update(user);
                 _context.SaveChanges();

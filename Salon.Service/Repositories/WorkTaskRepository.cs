@@ -1,7 +1,7 @@
 ﻿using Salon.Infra.Context;
 using Salon.Model.Models;
-using Salon.Service.DTOs;
 using Salon.Service.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -28,7 +28,7 @@ namespace Salon.Service.Repositories
                     _context.SaveChanges();
                 }
             }
-            catch (System.Exception)
+            catch (Exception)
             {
                 throw;
             }
@@ -41,7 +41,7 @@ namespace Salon.Service.Repositories
                 var task = _context.Tasks.Find(id);
                 return task;
             }
-            catch (System.Exception)
+            catch (Exception)
             {
                 return null;
             }
@@ -53,42 +53,38 @@ namespace Salon.Service.Repositories
             {
                 return _context.Tasks.ToList();
             }
-            catch (System.Exception)
+            catch (Exception)
             {
                 throw;
             }
         }
 
-        public void Insert(InsertWorkTaskDTO model)
+        public void Insert(WorkTask model)
         {
-            var task = new WorkTask
+            if(model != null)
             {
-                DateInitial = model.DateInitial,
-                DateEnd = model.DateEnd,
-                IdService = model.IdService,
-                IdUser = model.IdUser,
-                Price = model.Price,
-                Observation = model.Observation
-            };
-
-            _context.Tasks.Add(task);
-            _context.SaveChanges();
+                _context.Tasks.Add(model);
+                _context.SaveChanges();
+            }            
         }
 
         public void Update(WorkTask model)
         {
-            var task = new WorkTask
+            if(model != null)
             {
-                DateInitial = model.DateInitial,
-                DateEnd = model.DateEnd,
-                IdService = model.IdService,
-                IdUser = model.IdUser,
-                Price = model.Price,
-                Observation = model.Observation
-            };
+                _context.Tasks.Update(model);
+                _context.SaveChanges();
+            }
+        }
 
-            _context.Tasks.Update(task);
-            _context.SaveChanges();
+        public List<WorkTask> GetAllByDate(DateTime date)
+        {
+            return _context.Tasks.Where(t => t.DateInitial.Date == date.Date).ToList();
+        }
+
+        public List<WorkTask> GetWorkTaskByFilter(DateTime dateInitial, DateTime dateEnd)
+        {
+            return _context.Tasks.Where(t => t.DateInitial.Date >= dateInitial.Date && t.DateInitial.Date <= dateEnd.Date).ToList();
         }
     }
 }

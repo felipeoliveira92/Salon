@@ -1,5 +1,4 @@
 using Salon.Model.Models;
-using Salon.Service.DTOs;
 using System.Collections.Generic;
 
 namespace Salon.Service.Interfaces
@@ -14,6 +13,6 @@ namespace Salon.Service.Interfaces
         User GetUserByName(string name);
         User GetUserByLogin(string login);
         bool Login(string login, string password);
-        bool Register(RegisterDTO model);
+        bool Register(User model);
     }
 }

@@ -6,9 +6,9 @@ namespace Salon.Model.Models
     {            
         public User(string name, string login, string password, EnumTypeUser type)
         {
-            NameUser = name;
-            LoginUser = login;
-            PasswordUser = password;
+            Name = name;
+            Username = login;
+            Password = password;
             Type = type;
         }
 
@@ -18,10 +18,10 @@ namespace Salon.Model.Models
         }
 
         [Key]
-        public int IdUser { get; set; }
-        public string NameUser { get; set; }
-        public string LoginUser { get; set; }
-        public string PasswordUser { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
         public EnumTypeUser Type { get; set; }
     }
 }

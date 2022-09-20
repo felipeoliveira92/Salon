@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Salon.Infra.Context;
 
 namespace Salon.Infra.Migrations
 {
     [DbContext(typeof(SalonContext))]
-    partial class SalonContextModelSnapshot : ModelSnapshot
+    [Migration("20220919020615_Alter atributes of User class")]
+    partial class AlteratributesofUserclass
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -19,41 +21,23 @@ namespace Salon.Infra.Migrations
                 .HasAnnotation("ProductVersion", "5.0.17")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Salon.Model.Models.Client", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Cellphone")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Clients");
-                });
-
             modelBuilder.Entity("Salon.Model.Models.Services", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("IdService")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Description")
+                    b.Property<string>("DescriptionService")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("NameService")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("Price")
+                    b.Property<decimal>("PriceService")
                         .HasColumnType("decimal(18,2)");
 
-                    b.HasKey("Id");
+                    b.HasKey("IdService");
 
                     b.ToTable("Services");
                 });
@@ -95,9 +79,6 @@ namespace Salon.Infra.Migrations
                     b.Property<DateTime>("DateInitial")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("IdClient")
-                        .HasColumnType("int");
-
                     b.Property<int>("IdService")
                         .HasColumnType("int");
 
@@ -110,38 +91,30 @@ namespace Salon.Infra.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<int?>("ServiceIdService")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("UserId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("IdClient");
+                    b.HasIndex("ServiceIdService");
 
-                    b.HasIndex("IdService");
-
-                    b.HasIndex("IdUser");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Tasks");
                 });
 
             modelBuilder.Entity("Salon.Model.Models.WorkTask", b =>
                 {
-                    b.HasOne("Salon.Model.Models.Client", "Client")
-                        .WithMany()
-                        .HasForeignKey("IdClient")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Salon.Model.Models.Services", "Service")
                         .WithMany()
-                        .HasForeignKey("IdService")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ServiceIdService");
 
                     b.HasOne("Salon.Model.Models.User", "User")
                         .WithMany()
-                        .HasForeignKey("IdUser")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Client");
+                        .HasForeignKey("UserId");
 
                     b.Navigation("Service");
 

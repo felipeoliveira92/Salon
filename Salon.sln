@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Salon.Infra", "Salon.Infra\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Salon.Service", "Salon.Service\Salon.Service.csproj", "{0D6CF9AF-32D5-4B06-AD85-CBF0FAC66132}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Salon.Api", "Salon.Api\Salon.Api.csproj", "{BC24D2D6-40C5-42A5-B9DA-2762E970E554}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Salon.Api", "Salon.Api\Salon.Api.csproj", "{BC24D2D6-40C5-42A5-B9DA-2762E970E554}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -35,11 +35,18 @@ namespace Salon.Api.Controllers
         }
 
         [HttpPost]
-        public IActionResult PostUser(User model)
+        public IActionResult PostUser(UserDTO model)
         {
             try
             {
-                _userRepository.SaveUser(model);
+                var user = new User
+                {
+                    Name = model.Name,
+                    Username = model.Username,
+                    Password = model.Password,
+                    Type = model.Type                    
+                };
+                _userRepository.SaveUser(user);
                 return Ok();
             }
             catch (System.Exception ex)
@@ -87,7 +94,7 @@ namespace Salon.Api.Controllers
         }
 
         [HttpPost("/Register")]
-        public IActionResult Register(RegisterDTO model)
+        public IActionResult Register(User model)
         {
             if (ModelState.IsValid)
                 if (_userRepository.Register(model))
