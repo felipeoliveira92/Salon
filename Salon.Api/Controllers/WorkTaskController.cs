@@ -24,7 +24,7 @@ namespace Salon.Api.Controllers
             return work;
         }
 
-        [HttpGet("id")]
+        [HttpGet("int:id")]
         public WorkTask GetWorkTaskById(int id)
         {
             return _workTaskRepository.GetWorkTaskById(id);
