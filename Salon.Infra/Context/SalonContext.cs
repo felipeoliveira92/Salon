@@ -26,7 +26,8 @@ namespace Salon.Infra.Context
 
             var stringConnection = @"Data Source=192.168.1.112;Initial Catalog=dbSalon; User Id=sa;Password=Alarmaq2014@";
 
-            optionsBuilder.UseSqlServer(stringConnection);
+            optionsBuilder.UseLazyLoadingProxies()
+                          .UseSqlServer(stringConnection);
         }
     }
 }

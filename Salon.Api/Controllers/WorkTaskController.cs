@@ -24,19 +24,19 @@ namespace Salon.Api.Controllers
             return work;
         }
 
-        [HttpGet("int:id")]
+        [HttpGet("{id:int}")]
         public WorkTask GetWorkTaskById(int id)
         {
             return _workTaskRepository.GetWorkTaskById(id);
         }
 
-        [HttpGet("date")]
+        [HttpGet("{date:DateTime}")]
         public List<WorkTask> GetAllByDate(DateTime date)
         {
             return _workTaskRepository.GetAllByDate(date);
         }
 
-        [HttpGet("dateInit, dateEnd")]
+        [HttpGet("filter")]
         public List<WorkTask> GetWorkTaskByFilter(DateTime dateInitial, DateTime dateEnd)
         {
             return _workTaskRepository.GetWorkTaskByFilter(dateInitial, dateEnd);

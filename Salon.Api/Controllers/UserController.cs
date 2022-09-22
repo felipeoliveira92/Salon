@@ -22,13 +22,13 @@ namespace Salon.Api.Controllers
             return _userRepository.GetUsers();
         }
 
-        [HttpGet("id")]
+        [HttpGet("{id:int}")]
         public User GetUserById(int id)
         {
             return _userRepository.GetUserById(id);
         }
 
-        [HttpGet("username")]
+        [HttpGet("{username}")]
         public User GetUserByLogin(string username)
         {
             return _userRepository.GetUserByLogin(username);

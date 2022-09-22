@@ -18,7 +18,7 @@ namespace Salon.Api.Controllers
             _serviceRepository = serviceRepository;
         }
 
-        [HttpDelete("id")]
+        [HttpDelete("{id:int}")]
         public IActionResult DeleteService(int id)
         {
             try
@@ -34,7 +34,7 @@ namespace Salon.Api.Controllers
             }
         }
 
-        [HttpGet("id")]
+        [HttpGet("{id:int}")]
         public Services GetServiceById(int id)
         {
             if (id > 0)
@@ -43,7 +43,7 @@ namespace Salon.Api.Controllers
                 return null;
         }
 
-        [HttpGet("name")]
+        [HttpGet("{name}")]
         public Services GetServiceByName(string name)
         {
             if (name is not null)
